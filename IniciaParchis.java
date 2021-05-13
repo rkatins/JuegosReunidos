@@ -38,11 +38,12 @@ public class IniciaParchis {
         }// for (int i = 0; i < saNmbJugadores.length; i++)
 
         while (true){
+            boolean wbTerminar = false;
+
             for (int i = 0; i < saNmbJugadores.length; i++){
                 System.out.println("posicion de "+saNmbJugadores[i] + " = "+saPosicionFicha[i]);
             }
            
-            boolean wbTerminar = false;
             for (int i = 0; i < saNmbJugadores.length; i++){
                
                 System.out.println("Tira el jugador " + saFichas[i]);
@@ -50,7 +51,6 @@ public class IniciaParchis {
                 piNumDado = 0;
                 piNumDado = woTeclado.nextInt();woTeclado.nextLine();
                 saPosicionFicha[i] = saPosicionFicha[i] + piNumDado;
-
 
                 piTurno++;
                
@@ -62,6 +62,7 @@ public class IniciaParchis {
                         break;
                     }
                 }
+
                 if (wbTerminar) break;
                
                 if (piNumDado == 5)
@@ -69,7 +70,8 @@ public class IniciaParchis {
                 else
                     continue;
 
-            }// for (int i = 0; i < saNmbJugadores.length; i++)        
+            }// for (int i = 0; i < saNmbJugadores.length; i++)
+                
             if (wbTerminar) break;
         }// while (true)
     }// main()
