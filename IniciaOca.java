@@ -29,6 +29,8 @@ class IniciaOca{
                     break;
                 }
             }// for (int i = 0; i < saNmbJugadores.length; i++)
+
+            if (wbTerminar) break;
             
             for (int i = 0; i < saNmbJugadores.length; i++){
                 if(saPosicionFicha[i] == 29)
