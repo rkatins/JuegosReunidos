@@ -17,22 +17,22 @@ class IniciaOca{
         }// for (int i = 0; i <= saNmbJugadores.length; i++)
         
         while (true){
+            boolean wbTerminar = false;
             woCDadoFicha.mTirarDado();
             woCDadoFicha.mPosicion();
-                
+            
             for (int i = 0; i < saNmbJugadores.length; i++){
                 if(saPosicionFicha[i] >= 30){
                     piGanador = saPosicionFicha[i];
                     woCCasillasOca.mFinPartida();
+                    wbTerminar = true;
                     break;
                 }
             }// for (int i = 0; i < saNmbJugadores.length; i++)
             
             for (int i = 0; i < saNmbJugadores.length; i++){
-                if(saPosicionFicha[i] == 29){
+                if(saPosicionFicha[i] == 29)
                     woCCasillasOca.mVueltaAlInicio();
-                }
-                
                 break;
             }// for (int i = 0; i < saNmbJugadores.length; i++)
             
@@ -84,5 +84,5 @@ class CDadoFicha extends IniciaOca{
     void mPosicion(){
         for (int i = 0; i < saNmbJugadores.length; i++)
                 System.out.println("La posicion de " + saNmbJugadores[i] + " es la casilla " + saPosicionFicha[i]);
-    }
+    }// mPosicion
 }
