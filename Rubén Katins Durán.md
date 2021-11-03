@@ -1,4 +1,0 @@
-# Rubén Katins Durán
-## =====================================
-
-[![GitHub](https://findicons.com/files/icons/2779/simple_icons/128/github_128_black.png)](https://github.com/rkatins) [![Twitter](https://findicons.com/files/icons/2779/simple_icons/128/twitter_128_black.png)](mailto:katinsruben.98@gmail.com?Subject=FUISTE%20UN%20COTILLA%) [![GMail](https://findicons.com/files/icons/2779/simple_icons/128/gmail_128_black.png)](mailto:katinsruben.98@gmail.com) [![Instagram](https://findicons.com/files/icons/2779/simple_icons/128/instagram_128_black.png)](mailto:katinsruben.98@gmail.com?Subject=FUISTE%20UN%20COTILLA%)
