@@ -57,7 +57,7 @@ public class TresEnRalla {
 				+ "\n1. Jugador1 VS Jugador2"
 				+ "\n2. Jugador2 VS Jugador1"
 				+ "\n3. Jugador1 VS Maquina"
-				+ "\n4. Maquina VS Jugador");
+				+ "\n4. Maquina VS Jugador1");
 		opcionJuego = sc.nextInt();sc.nextLine();
 			
 		return opcionJuego;
@@ -102,7 +102,7 @@ public class TresEnRalla {
 	    	case 3: {
 	    		String nombre;
 	    		
-	    		System.out.println("Nombre del Jugador" + 1);
+	    		System.out.println("Nombre del Jugador");
 				nombre = sc.nextLine();
 				
 				jugador[0] = new Jugador(nombre, 'X');
@@ -112,7 +112,7 @@ public class TresEnRalla {
 	    	case 4: {
 	    		String nombre;
 	    		
-	    		System.out.println("Nombre del Jugador" + 1);
+	    		System.out.println("Nombre del Jugador");
 				nombre = sc.nextLine();
 				
 				jugador[1] = new Jugador(nombre, 'O');
