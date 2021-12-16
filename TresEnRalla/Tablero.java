@@ -21,6 +21,15 @@ public class Tablero {
         }
         System.out.println("------------------\n");
     }
-
+    
+    public void mComprobarGanador(char[][] tablero3EnRalla) {
+		for (int i = 0; i < tablero3EnRalla.length; i++) {
+			for (int j = 0; j < tablero3EnRalla.length; j++) {
+				if (tablero3EnRalla[i][j] == 'X') {
+					
+				}
+			}
+		}
+	}
 }
 
