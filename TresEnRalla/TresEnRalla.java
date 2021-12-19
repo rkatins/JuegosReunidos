@@ -1,4 +1,4 @@
-package TresEnRalla;
+package TresEnRaya;
 
 import java.util.Scanner;
 
@@ -14,7 +14,6 @@ public class TresEnRalla {
         
         int opcionJuego;
         boolean loop = true;
-        boolean ganador = false;
         
 		while (loop) {
 			opcionJuego = mEleccionDeJuego();
@@ -51,7 +50,7 @@ public class TresEnRalla {
 		
 		System.out.println("\n");
 		
-		mJugar(jugador);
+		mJugar(jugador, loop);
     }
         
     public static int mEleccionDeJuego() {
@@ -135,13 +134,11 @@ public class TresEnRalla {
 		}
 	}
     
-    public static void mJugar(Jugador[] jugador) {
+    public static void mJugar(Jugador[] jugador, boolean loop) {
     	for (int i = 0; i < 9; i++) {
 			
 			int fila;
 			int columna;
-			String visualizar;
-			String visualizarMAX;
 				
 			for (int j = 0; j < jugador.length; j++) {
 				System.out.println(jugador[j].nombre + " coloca ficha");
@@ -160,19 +157,26 @@ public class TresEnRalla {
 						posicionOK = true;
 					}
 				}
-				System.out.println("Deseas ver el tablero? SI/NO");
-				visualizar = sc.nextLine();
-				visualizarMAX = visualizar.toUpperCase();
 				
-//				tablero.mComprobarGanador(jugador);
+				System.out.println("\n");
 				
-				switch (visualizarMAX) {
-					case "SI": {
-						tablero.mVisualizarTablero(tablero3EnRalla);
-					break;
-					}
-				}
+				tablero.mVisualizarTablero(tablero3EnRalla);
+					
+				System.out.println("\n");
+				if (tablero.comprobarGanadorX(tablero3EnRalla, jugador)) {
+					System.out.println("GANAN LAS X");
+					loop = false;
+					j = jugador.length;
+					i = 10;
+				}else if (tablero.comprobarGanadorO(tablero3EnRalla, jugador)) {
+					System.out.println("GANAN LAS O");
+					loop = false;
+					j = jugador.length;
+					i = 10;
+				}			
 			}
+			
+			
 		}
 	}
 }
