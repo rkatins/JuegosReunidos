@@ -8,19 +8,54 @@ public class PartidaMain {
 	static boolean rojo = false;
 	static boolean verde = false;
 	static boolean amarillo = false;
-	
+	static Dado dado = new Dado();
 	
 	public static void main(String[] args) {
 		int numJugadores;
+		boolean tirarDado = true;
 		
 		System.out.println("¿Cuantas persona van a jugar?");
 		numJugadores = sc.nextInt();sc.nextLine();
 		Ficha[] jugadores = new Ficha[numJugadores];
+		
 		System.out.println("\n");
 		
+		mCreacionJugadores(numJugadores, jugadores);
+		
+		System.out.println("\n");
+		System.out.println("\n");
+		
+		System.out.println("!!Comienza el juego¡¡");
+		
+		while (tirarDado) {
+			mAvanzaTirarDado(numJugadores, jugadores);
+			
+			System.out.println("\n");
+			
+			for (int i = 0; i < numJugadores; i++) {											
+				System.out.println("posicion= " + jugadores[i].posicion);
+			}
+			
+			for (int i = 0; i < numJugadores; i++) {
+				if (jugadores[i].posicion == 30) {
+					jugadores[i].ganador = true;
+					tirarDado = false;
+				}
+				
+				if (jugadores[i].ganador = true) {
+					System.out.println("Ganador: " + jugadores[i].nombre);
+					System.out.println("FIN DEL JUEGO");
+				}
+			}
+			
+//			tirarDado = mComprobarGanador(numJugadores, jugadores, tirarDado);
+		}
+	}
+	
+	public static void mCreacionJugadores(int numJugadores, Ficha[] jugadores) {
 		for (int i = 0; i < numJugadores;i++) {
 			String nombre = null;
-			String color = null;	
+			String color = null;
 			int posicion = 0;
 			
 			
@@ -29,14 +64,13 @@ public class PartidaMain {
 			System.out.println("\n");
 			color = mElegirColor(numJugadores);
 			
-			jugadores[i] = new Ficha(nombre, color, posicion);
-		}
-		
-		System.out.println("\n");
+			jugadores[i] = new Ficha(nombre, color);
+		}		
 		
 		for (int i = 0; i < numJugadores; i++) {											
 			System.out.println(jugadores[i].toString());
 		}
+		System.out.println("\n----------------\n");
 	}
 	
 	public static String mElegirColor(int numJugadores) {
@@ -104,4 +138,32 @@ public class PartidaMain {
 		System.out.println("----------------\n");
 		return color;
 	}	
+
+	public static void mAvanzaTirarDado(int numJugadores, Ficha[] jugadores) {
+		for (int i = 0; i < numJugadores; i++) {
+			int posicionAvanzada;
+			System.out.println(jugadores[i].nombre + " esta tirando el dado...");
+			posicionAvanzada = dado.mTirarDado();
+			System.out.println(jugadores[i].nombre + " avanza " + posicionAvanzada + " casillas");
+			jugadores[i].posicion += posicionAvanzada;
+			System.out.println("\n");
+		}
+		System.out.println("----------------\n");
+	}
+
+	public static boolean mComprobarGanador(int numJugadores, Ficha[] jugadores, boolean tirarDado) {
+		for (int i = 0; i < numJugadores; i++) {
+			if (jugadores[i].posicion == 30) {
+				jugadores[i].ganador = true;
+				tirarDado = false;
+			}
+			
+			if (jugadores[0].ganador = true) {
+				System.out.println("Ganador: " + jugadores[0].nombre);
+				System.out.println("FIN DEL JUEGO");
+				return tirarDado;
+			}
+		}
+		return tirarDado;
+	}
 }
