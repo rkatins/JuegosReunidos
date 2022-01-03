@@ -175,8 +175,6 @@ public class TresEnRalla {
 					i = 10;
 				}			
 			}
-			
-			
 		}
 	}
 }
