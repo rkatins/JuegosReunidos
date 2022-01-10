@@ -1,6 +1,5 @@
 package CuatroEnRaya;
 
-import java.util.Iterator;
 import java.util.Scanner;
 
 public class CuatroEnRaya {
@@ -56,7 +55,7 @@ public class CuatroEnRaya {
 //		tablero.mVisualizarTablero(tablero4EnRaya);
 //		System.out.println("\n");
 		
-		mJugar(jugador, tablero4EnRaya);
+		tablero.mJugar(jugador, tablero4EnRaya);
 	}
 
 	public static int mEleccionTipoJuego() {
@@ -140,48 +139,5 @@ public class CuatroEnRaya {
 		for (int i = 0; i < jugador.length; i++) {
 			System.out.println(jugador[i].toString());
 		}
-	}
-    
-    public static void mJugar(Jugador[] jugador, char[][] tablero4EnRaya) { 
-    	int casillasTotales = 0;
-    	
-    	for (int i = 0; i < tablero4EnRaya.length; i++) {
-			for (int j = 0; j < tablero4EnRaya[i].length; j++) {
-				casillasTotales++;
-			}
-		}
-    	
-    	System.out.println("Casillas totales -> " + casillasTotales);
-    	
-    	for (int i = 0; i < casillasTotales; i++) {
-    		int columnaElegida;
-//    		boolean turnoFin = false;
-//    		boolean fichaColocada = false;
-    		
-			for (int j = 0; j < jugador.length; j++) {
-				boolean fichaColocada = false;
-				
-				System.out.println(fichaColocada);
-				System.out.println("TURNO -> " + (i+1));
-				System.out.println("Turno de " + jugador[j].nombre + "\nElige columna:");
-				columnaElegida = sc.nextInt();sc.nextLine();
-				
-				while (!fichaColocada) {
-					for (int k = tablero4EnRaya.length-1; k > 0; k--) {
-						if (tablero4EnRaya[k][columnaElegida-1] == 'X' || tablero4EnRaya[k][columnaElegida-1] == 'O') {
-							tablero4EnRaya[k][columnaElegida-1] = tablero4EnRaya[k][columnaElegida-1];
-//							k = 0;
-							fichaColocada = true;
-						} else {
-							tablero4EnRaya[k][columnaElegida-1] = jugador[j].ficha;
-							k = 0;
-							fichaColocada = true;
-						}
-					}
-//					fichaColocada = true;
-					tablero.mVisualizarTablero(tablero4EnRaya);
-				}
-			}	
-		}				
 	}
 }
