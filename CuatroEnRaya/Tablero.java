@@ -54,7 +54,7 @@ public class Tablero {
 				columnaElegida = sc.nextInt();sc.nextLine();
 				
 				while (!fichaColocada) {
-					for (int k = tablero4EnRaya.length-1; k > 0; k--) {
+					for (int k = tablero4EnRaya.length-1; k > -1; k--) {
 						if (tablero4EnRaya[k][columnaElegida-1] == '-') {
 							tablero4EnRaya[k][columnaElegida-1] = jugador[j].ficha;
 							k = 0;
