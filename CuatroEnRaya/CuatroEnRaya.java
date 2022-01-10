@@ -171,14 +171,12 @@ public class CuatroEnRaya {
 						if (tablero4EnRaya[k][columnaElegida-1] == 'X' || tablero4EnRaya[k][columnaElegida-1] == 'O') {
 							tablero4EnRaya[k][columnaElegida-1] = tablero4EnRaya[k][columnaElegida-1];
 //							k = 0;
-//							fichaColocada = true;
+							fichaColocada = true;
 						} else {
 							tablero4EnRaya[k][columnaElegida-1] = jugador[j].ficha;
 							k = 0;
 							fichaColocada = true;
 						}
-//						k = 0;
-//						fichaColocada = true;
 					}
 //					fichaColocada = true;
 					tablero.mVisualizarTablero(tablero4EnRaya);
