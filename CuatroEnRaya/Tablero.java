@@ -44,8 +44,6 @@ public class Tablero {
     	
     	for (int i = 0; i < casillasTotales; i++) {
     		int columnaElegida;
-//    		boolean turnoFin = false;
-//    		boolean fichaColocada = false;
     		
 			for (int j = 0; j < jugador.length; j++) {
 				boolean fichaColocada = false;
@@ -57,16 +55,13 @@ public class Tablero {
 				
 				while (!fichaColocada) {
 					for (int k = tablero4EnRaya.length-1; k > 0; k--) {
-						if (tablero4EnRaya[k][columnaElegida-1] == 'X' || tablero4EnRaya[k][columnaElegida-1] == 'O') {
-							tablero4EnRaya[k][columnaElegida-1] = tablero4EnRaya[k][columnaElegida-1];
-//							k = 0;
-							fichaColocada = true;
-						} else {
+						if (tablero4EnRaya[k][columnaElegida-1] == '-') {
 							tablero4EnRaya[k][columnaElegida-1] = jugador[j].ficha;
 							k = 0;
-							fichaColocada = true;
 						}
+						fichaColocada = true;
 					}
+					
 //					fichaColocada = true;
 					mVisualizarTablero(tablero4EnRaya);
 				}
